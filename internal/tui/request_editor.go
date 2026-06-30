@@ -574,7 +574,7 @@ func splitParams(params string) []string {
 func initialRequestEditorModel(route scanner.Route, info detector.StackInfo, template string) requestEditorModel {
 	ti := textinput.New()
 	ti.Placeholder = "Bearer ey..."
-	ti.CharLimit = 500
+	ti.CharLimit = 4096
 	ti.Width = 54
 
 	ta := textarea.New()

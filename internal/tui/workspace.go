@@ -246,7 +246,15 @@ func (m WorkspaceModel) Update(msg tea.Msg) (tea.Model, tea.Cmd) {
 			}
 			return m, nil
 		case tea.KeyCtrlS:
-			m.req.Headers["Authorization"] = m.editor.authInput.Value()
+			authVal := strings.TrimSpace(m.editor.authInput.Value())
+			if authVal != "" && !strings.HasPrefix(strings.ToLower(authVal), "bearer ") {
+				authVal = "Bearer " + authVal
+			}
+			if authVal != "" {
+				m.req.Headers["Authorization"] = authVal
+			} else {
+				delete(m.req.Headers, "Authorization")
+			}
 			if m.editor.hasBody {
 				m.req.Body = m.editor.bodyInput.Value()
 			}

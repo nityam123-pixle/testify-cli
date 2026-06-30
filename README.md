@@ -127,7 +127,7 @@ Testify automatically infers the backend port by parsing your source code (e.g.,
 PORT=5000 testify
 
 # Override the entire base URL
-TESTIFY_URL=https://api.chatlyn.in testify
+TESTIFY_URL=https://<your-site-doman>.com testify start
 ```
 
 ## Keyboard Shortcuts
