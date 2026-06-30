@@ -1,0 +1,41 @@
+version: 2
+
+project_name: testify
+
+before:
+  hooks:
+    - go mod tidy
+
+builds:
+  - id: testify
+    binary: testify
+    main: ./main.go
+    env:
+      - CGO_ENABLED=0
+    goos:
+      - darwin
+      - linux
+      - windows
+    goarch:
+      - amd64
+      - arm64
+    ldflags:
+      - -s -w -X main.version={{.Version}}
+
+archives:
+  - id: testify-archive
+    ids: [testify]
+    formats: [tar.gz]
+    format_overrides:
+      - goos: windows
+        formats: [zip]
+    name_template: >-
+      {{ .ProjectName }}_{{ .Os }}_{{ .Arch }}
+
+checksum:
+  name_template: 'checksums.txt'
+
+release:
+  github:
+    owner: nityam123-pixle
+    name: testify-cli
