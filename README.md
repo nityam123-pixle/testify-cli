@@ -34,6 +34,7 @@ Postman and Insomnia require manual setup for every project: creating collection
 ## Installation
 
 ### Node Package Manager (NPM) (Recommended)
+
 You can install Testify globally using npm:
 
 ```bash
@@ -43,7 +44,7 @@ npm install -g testify-api-cli
 ### Build from source
 
 ```bash
-git clone [REPO_URL]
+git clone https://github.com/nityam123-pixle/testify-cli.git
 cd testify-cli
 go build -o testify .
 
@@ -56,11 +57,44 @@ sudo mv testify /usr/local/bin/testify
 
 ### Homebrew
 
+You can install Testify via Homebrew:
+
 ```bash
-[COMING_SOON]
+brew tap nityam123-pixle/homebrew-testify
+brew install testify-api-cli
 ```
 
+
+### cURL (Linux & macOS)
+
+You can install Testify with a single command — no Node or Homebrew required:
+
+```bash
+curl -fsSL https://raw.githubusercontent.com/nityam123-pixle/testify-cli/main/install.sh | bash
+```
+
+This script auto-detects your OS and CPU architecture, downloads the correct binary from the [latest GitHub release](https://github.com/nityam123-pixle/testify-cli/releases/latest), and installs it to `/usr/local/bin/testify`.
+
+### PowerShell (Windows)
+
+Open **PowerShell as Administrator** and run:
+
+```powershell
+iwr -useb https://raw.githubusercontent.com/nityam123-pixle/testify-cli/main/install.ps1 | iex
+```
+
+This script auto-detects your CPU architecture (`amd64` or `arm64`), downloads the correct `.zip` from the [latest GitHub release](https://github.com/nityam123-pixle/testify-cli/releases/latest), extracts it to `%LOCALAPPDATA%\Programs\testify`, and automatically adds it to your user `PATH`.
+
+After installation, restart your terminal and run:
+
+```powershell
+testify version
+```
+
+> **Manual download**: You can also grab a `.zip` directly from the [Releases page](https://github.com/nityam123-pixle/testify-cli/releases) and add the folder to your PATH manually.
+
 ## Quick Start
+
 
 Navigate to your backend project folder and run Testify:
 
@@ -143,7 +177,7 @@ Example `testify.json`:
 
 ## Project Status
 
-This is an actively developed personal project. The CLI engine is currently complete and stable (`v1.0.0`). The web-based UI Next.js frontend is currently in progress.
+This is an actively developed personal project. The CLI engine is currently complete and stable (`v1.0.1`). The web-based UI Next.js frontend is currently in progress.
 
 ## Contributing
 
