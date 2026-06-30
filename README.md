@@ -6,7 +6,7 @@
 
 ![Go Version](https://img.shields.io/badge/Go-1.25.0-00ADD8?style=flat-square&logo=go)
 ![License](https://img.shields.io/badge/License-Apache%202.0-blue?style=flat-square)
-![Release](https://img.shields.io/badge/Release-v1.0.0-green?style=flat-square)
+![Release](https://img.shields.io/badge/Release-v1.0.1-green?style=flat-square)
 ![Build](https://img.shields.io/badge/Build-passing-brightgreen?style=flat-square)
 
 ## The Problem
@@ -33,6 +33,13 @@ Postman and Insomnia require manual setup for every project: creating collection
 
 ## Installation
 
+### Node Package Manager (NPM) (Recommended)
+You can install Testify globally using npm:
+
+```bash
+npm install -g testify-api-cli
+```
+
 ### Build from source
 
 ```bash
@@ -48,12 +55,6 @@ sudo mv testify /usr/local/bin/testify
 ```
 
 ### Homebrew
-
-```bash
-[COMING_SOON]
-```
-
-### cURL Install Script
 
 ```bash
 [COMING_SOON]
@@ -82,6 +83,18 @@ testify start # (or ./testify start if you didn't move it to your PATH)
 | `testify add`     | Interactively add a custom route to`testify.json` |
 | `testify version` | Print the version number of Testify                 |
 | `testify help`    | Help about any command                              |
+
+## Configuration
+
+Testify automatically infers the backend port by parsing your source code (e.g., `app.listen(3000)`). However, if you are running Testify on a remote production or staging server, you can override the base URL by injecting environment variables:
+
+```bash
+# Override the port
+PORT=5000 testify
+
+# Override the entire base URL
+TESTIFY_URL=https://api.chatlyn.in testify
+```
 
 ## Keyboard Shortcuts
 
