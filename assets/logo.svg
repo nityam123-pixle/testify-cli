@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" width="400" height="400">
+  <!-- Testify {T} Logo - Teal #8bd5ca -->
+  <rect width="400" height="400" fill="transparent" />
+  
+  <g fill="#8bd5ca" stroke="#8bd5ca">
+    <!-- Left Brace { -->
+    <path d="M120,60 Q80,60 80,100 L80,160 Q80,200 40,200 Q80,200 80,240 L80,300 Q80,340 120,340" 
+          fill="none" stroke-width="28" stroke-linecap="round" stroke-linejoin="round"/>
+    
+    <!-- Right Brace } -->
+    <path d="M280,60 Q320,60 320,100 L320,160 Q320,200 360,200 Q320,200 320,240 L320,300 Q320,340 280,340" 
+          fill="none" stroke-width="28" stroke-linecap="round" stroke-linejoin="round"/>
+
+    <!-- Letter T -->
+    <rect x="135" y="110" width="130" height="32" rx="6" />
+    <rect x="184" y="110" width="32" height="180" rx="6" />
+  </g>
+</svg>
