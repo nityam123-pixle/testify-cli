@@ -815,10 +815,17 @@ func BuildRequest(route scanner.Route, info detector.StackInfo) executor.Request
 		}
 	}
 
+	baseURL := "http://localhost:" + info.Port
+	if customURL := os.Getenv("TESTIFY_URL"); customURL != "" {
+		baseURL = customURL
+	} else if customPort := os.Getenv("PORT"); customPort != "" {
+		baseURL = "http://localhost:" + customPort
+	}
+
 	req := executor.Request{
 		Method:  route.Method,
 		Path:    route.Path,
-		BaseURL: "http://localhost:" + info.Port,
+		BaseURL: baseURL,
 		Headers: map[string]string{
 			"Content-Type": "application/json",
 		},
